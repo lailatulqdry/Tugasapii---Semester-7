@@ -19,5 +19,16 @@ class Siswa extends Model
         'alamat',
         'no_hp',
         'jenis_kelamin',
+        'kelas_id',
     ];
+    protected $table = 'siswas';
+
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas_id');
+    }
+    public function recapkehadiran()
+    {
+        return $this->hasMany(recapKehadiran::class, 'siswa_id');
+    }
 }

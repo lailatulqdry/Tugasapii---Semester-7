@@ -15,5 +15,14 @@ class recapKehadiran extends Model
         'total_izin',
         'total_sakit',
         'total_alpha',
+        'siswa_id',
     ];
+    public function absensi()
+    {
+        return $this->hasMany(Absensi::class);
+    }
+    public function siswa()
+    {
+        return $this->belongsTo(Siswa::class);
+    }
 }

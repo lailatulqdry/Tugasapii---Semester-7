@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('recap_kehadirans', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('siswa_id')->constrained('siswas')->onDelete('cascade');
             $table->string('total_hadir');
             $table->string('total_izin');
             $table->string('total_sakit');

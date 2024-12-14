@@ -17,5 +17,15 @@ class Guru extends Model
         'alamat',
         'no_hp',
         'jenis_kelamin',
+        'mata_pelajaran_id',
     ];
+
+    public function mata_pelajaran()
+    {
+        return $this->belongsTo(MataPelajaran::class, 'mata_pelajaran_id');
+    }
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class, 'guru_id');
+    }
 }
